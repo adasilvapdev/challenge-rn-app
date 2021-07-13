@@ -8,6 +8,7 @@ import { IMAGES } from '../../constants';
 import { SIZES } from '../../styles/themes/BaseTheme';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import { useTheme } from '../../styles/themes/default/ThemeProvider';
+import { Header } from '../../components/templates';
 
 const FeedScreen = () => {
     const { THEME } = useTheme()
@@ -31,43 +32,9 @@ const FeedScreen = () => {
         )
     }
 
-    const renderHeader = () => {
-        return (
-            <View style={{ flexDirection: 'row', height: 50, justifyContent: "space-between" }}>
-                <TouchableOpacity
-                    style={{
-                        width: 50,
-                        paddingLeft: SIZES.PADDING * 2,
-                        justifyContent: 'center'
-                    }}
-                >
-                    <Image
-                        source={IMAGES.AVATAR}
-                        resizeMode="contain"
-                        style={{
-                            width: 50,
-                            height: 50,
-                            borderRadius: 70
-                        }}
-                    />
-                </TouchableOpacity>
-
-                <TouchableOpacity
-                    style={{
-                        width: 50,
-                        paddingRight: SIZES.PADDING * 2,
-                        justifyContent: 'center'
-                    }}
-                >
-                    <FontAwesome name="shopping-cart" size={30} color={THEME.PRIMARY} />
-                </TouchableOpacity>
-            </View>
-        )
-    }
-
     return (
         <View style={styles.container}>
-            {renderHeader()}
+            <Header />
 
             <View style={{
                 flex: 1,
