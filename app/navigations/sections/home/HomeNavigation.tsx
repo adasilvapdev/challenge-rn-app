@@ -1,30 +1,40 @@
 import React from 'react'
-import { createStackNavigator } from '@react-navigation/stack'
-import { FeedScreen, FavsScreen, DetailsScreen } from '../../../screens/home'
+import { createBottomTabNavigator, BottomTabBar } from '@react-navigation/bottom-tabs'
+import Icon from 'react-native-vector-icons/AntDesign';
+import { FeedNavigation } from '../../sections/home'
+import { FavsNavigation } from '../../sections/favorites'
+const Tab = createBottomTabNavigator()
 
 const HomeNavigation: React.FC = () => {
-    const Stack = createStackNavigator()
 
     return (
-        <Stack.Navigator
-            initialRouteName="FeedScreen"
-            screenOptions={{
-                headerShown: false
-            }}
+        <Tab.Navigator
+            initialRouteName="FeedNavigation"
+        // screenOptions={{
+        //     headerShown: false
+        // }}
         >
-            <Stack.Screen
-                name="FeedScreen"
-                component={FeedScreen}
+            <Tab.Screen
+                name="FeedNavigation"
+                component={FeedNavigation}
+                options={{
+                    tabBarAccessibilityLabel: 'Home',
+                    tabBarIcon: ({ focused }) => (
+                        <Icon name="home" size={30} color="purple" />
+                    ),
+                }}
             />
-            <Stack.Screen
-                name="FavsScreen"
-                component={FavsScreen}
+            <Tab.Screen
+                name="FavsNavigation"
+                component={FavsNavigation}
+                options={{
+                    tabBarAccessibilityLabel: 'Favorites',
+                    tabBarIcon: ({ focused }) => (
+                        <Icon name="heart" size={30} color="purple" />
+                    ),
+                }}
             />
-            <Stack.Screen
-                name="DetailsScreen"
-                component={DetailsScreen}
-            />
-        </Stack.Navigator>
+        </Tab.Navigator>
     )
 }
 
