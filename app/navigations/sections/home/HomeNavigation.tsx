@@ -51,13 +51,14 @@ const HomeNavigation: React.FC = () => {
                     )
                 }}
             />
+
             <Tab.Screen
-                name="CartNavigation"
-                component={CartNavigation}
+                name="ProfileNavigation"
+                component={ProfileNavigation}
                 options={{
-                    tabBarAccessibilityLabel: 'Cart',
+                    tabBarAccessibilityLabel: 'Profile',
                     tabBarIcon: ({ focused }) => (
-                        <FontAwesome name="user" size={28} color={focused ? THEME.PRIMARY : THEME.DEFAULT} />
+                        <FontAwesome name="shopping-cart" size={28} color={focused ? THEME.PRIMARY : THEME.DEFAULT} />
                     ),
                     tabBarButton: (props: any) => (
                         <TabBarButton
@@ -66,13 +67,14 @@ const HomeNavigation: React.FC = () => {
                     )
                 }}
             />
+
             <Tab.Screen
-                name="ProfileNavigation"
-                component={ProfileNavigation}
+                name="CartNavigation"
+                component={CartNavigation}
                 options={{
-                    tabBarAccessibilityLabel: 'Profile',
+                    tabBarAccessibilityLabel: 'Cart',
                     tabBarIcon: ({ focused }) => (
-                        <FontAwesome name="shopping-cart" size={28} color={focused ? THEME.PRIMARY : THEME.DEFAULT} />
+                        <FontAwesome name="user" size={28} color={focused ? THEME.PRIMARY : THEME.DEFAULT} />
                     ),
                     tabBarButton: (props: any) => (
                         <TabBarButton
