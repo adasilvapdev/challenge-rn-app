@@ -1,8 +1,11 @@
 import React from 'react'
-import { createBottomTabNavigator, BottomTabBar } from '@react-navigation/bottom-tabs'
-import Icon from 'react-native-vector-icons/AntDesign';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
+import AntDesign from 'react-native-vector-icons/AntDesign';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import { FeedNavigation } from '../../sections/home'
 import { FavsNavigation } from '../../sections/favorites'
+import { ProfileNavigation } from '../../sections/profile'
+import { CartNavigation } from '../../sections/cart'
 import { useTheme } from '../../../styles/themes/default/ThemeProvider';
 
 const Tab = createBottomTabNavigator()
@@ -11,10 +14,9 @@ const HomeNavigation: React.FC = () => {
     const { THEME } = useTheme()
     return (
         <Tab.Navigator
-            initialRouteName="FeedNavigation"
-        // screenOptions={{
-        //     headerShown: false
-        // }}
+            tabBarOptions={{
+                showLabel: false
+            }}
         >
             <Tab.Screen
                 name="FeedNavigation"
@@ -22,7 +24,7 @@ const HomeNavigation: React.FC = () => {
                 options={{
                     tabBarAccessibilityLabel: 'Home',
                     tabBarIcon: ({ focused }) => (
-                        <Icon name="home" size={30} color={THEME.PRIMARY} />
+                        <FontAwesome name="home" size={30} color={focused ? THEME.PRIMARY : THEME.DEFAULT} />
                     ),
                 }}
             />
@@ -32,7 +34,27 @@ const HomeNavigation: React.FC = () => {
                 options={{
                     tabBarAccessibilityLabel: 'Favorites',
                     tabBarIcon: ({ focused }) => (
-                        <Icon name="heart" size={30} color={THEME.PRIMARY} />
+                        <AntDesign name="heart" size={25} color={focused ? THEME.PRIMARY : THEME.DEFAULT} />
+                    ),
+                }}
+            />
+            <Tab.Screen
+                name="CartNavigation"
+                component={CartNavigation}
+                options={{
+                    tabBarAccessibilityLabel: 'Cart',
+                    tabBarIcon: ({ focused }) => (
+                        <FontAwesome name="user" size={28} color={focused ? THEME.PRIMARY : THEME.DEFAULT} />
+                    ),
+                }}
+            />
+            <Tab.Screen
+                name="ProfileNavigation"
+                component={ProfileNavigation}
+                options={{
+                    tabBarAccessibilityLabel: 'Profile',
+                    tabBarIcon: ({ focused }) => (
+                        <FontAwesome name="shopping-cart" size={28} color={focused ? THEME.PRIMARY : THEME.DEFAULT} />
                     ),
                 }}
             />

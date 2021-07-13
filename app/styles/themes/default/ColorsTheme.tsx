@@ -6,6 +6,7 @@ export const lightColors = {
     PRIMARY: COLORS.PRIMARY,     //* purple
     SECONDARY: COLORS.SECONDARY,   //* purple
 
+    DEFAULT: COLORS.DARK_GRAY,
     BACKGROUND: COLORS.WHITE,
 };
 
@@ -15,6 +16,7 @@ export const darkColors = {
     PRIMARY: COLORS.PRIMARY,     //* purple
     SECONDARY: COLORS.SECONDARY,   //* purple
 
+    DEFAULT: COLORS.DARK_GRAY,
     BACKGROUND: COLORS.BLACK,
 };
 
