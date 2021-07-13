@@ -1,19 +1,15 @@
 import React, { useEffect } from 'react'
 import { StyleSheet, Text, View } from 'react-native'
-import { GET, POST } from '../../api/api';
+import { useProducts } from '../../hooks/useProducts'
 
 const FeedScreen = () => {
-    const getData = async (url: string) => {
-        try {
-            const { data: products } = await GET(url);
-            console.log('products: ', products)
-        } catch (error) {
-            console.log('[ERROR]: FeedScreen > getData: ', error)
-        }
-    }
+    const {
+        products,
+    } = useProducts()
 
     useEffect(() => {
-        getData('products/4')
+        console.log('--- products: ', products)
+        console.log('-----')
     }, []);
 
     return (
