@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from 'react-native'
 
 const DetailsScreen = () => {
     return (
-        <View>
+        <View style={styles.container}>
             <Text>Details Screen</Text>
         </View>
     )
@@ -11,4 +11,10 @@ const DetailsScreen = () => {
 
 export default DetailsScreen
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        justifyContent: "center",
+        alignSelf: "center"
+    }
+})

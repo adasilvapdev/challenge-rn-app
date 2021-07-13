@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from 'react-native'
 
 const FavsScreen = () => {
     return (
-        <View>
+        <View style={styles.container}>
             <Text>Favs Screen</Text>
         </View>
     )
@@ -11,4 +11,10 @@ const FavsScreen = () => {
 
 export default FavsScreen
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        justifyContent: "center",
+        alignSelf: "center"
+    }
+})
