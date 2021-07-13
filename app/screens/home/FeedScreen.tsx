@@ -4,24 +4,18 @@ import { CategoryButton } from '../../components/atoms/buttons'
 import { useProducts, useCategories } from '../../hooks'
 import { FlatList } from 'react-native-gesture-handler';
 
-interface CategoryProps {
-    category: string
-}
-
 const FeedScreen = () => {
     const { products, } = useProducts()
     const { categories, } = useCategories()
 
-    // useEffect(() => {
-    //     console.log('--- products: ', products)
-    //     console.log('----------------------------------------')
-    //     console.log('--- categories: ', categories)
-    //     console.log('-----')
-    // }, []);
-
+    useEffect(() => {
+        console.log('--- products: ', products)
+        console.log('----------------------------------------')
+        console.log('--- categories: ', categories)
+        console.log('-----')
+    }, []);
 
     const renderItem = (item) => {
-        // console.log('item: ', item)
         return (
             <CategoryButton
                 category={item.item}
