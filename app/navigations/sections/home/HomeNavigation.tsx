@@ -92,5 +92,9 @@ const styles = StyleSheet.create({
         borderTopWidth: 0,
         backgroundColor: "transparent",
         elevation: 0,
+        opacity: .8,
+        paddingBottom: '20%',
+        paddingLeft: '5%',
+        paddingRight: '5%',
     },
 });
