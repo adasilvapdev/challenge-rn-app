@@ -1,11 +1,13 @@
-import React from 'react'
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
+import React from 'react';
+import { StyleSheet } from 'react-native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
-import { FeedNavigation } from '../../sections/home'
-import { FavsNavigation } from '../../sections/favorites'
-import { ProfileNavigation } from '../../sections/profile'
-import { CartNavigation } from '../../sections/cart'
+import { TabBarButton } from '../../../components/atoms/buttons'
+import { FeedNavigation } from '../../sections/home';
+import { FavsNavigation } from '../../sections/favorites';
+import { ProfileNavigation } from '../../sections/profile';
+import { CartNavigation } from '../../sections/cart';
 import { useTheme } from '../../../styles/themes/default/ThemeProvider';
 
 const Tab = createBottomTabNavigator()
@@ -15,7 +17,8 @@ const HomeNavigation: React.FC = () => {
     return (
         <Tab.Navigator
             tabBarOptions={{
-                showLabel: false
+                showLabel: false,
+                style: styles.tabBarOptions
             }}
         >
             <Tab.Screen
@@ -26,6 +29,11 @@ const HomeNavigation: React.FC = () => {
                     tabBarIcon: ({ focused }) => (
                         <FontAwesome name="home" size={30} color={focused ? THEME.PRIMARY : THEME.DEFAULT} />
                     ),
+                    tabBarButton: (props: any) => (
+                        <TabBarButton
+                            {...props}
+                        />
+                    )
                 }}
             />
             <Tab.Screen
@@ -36,6 +44,11 @@ const HomeNavigation: React.FC = () => {
                     tabBarIcon: ({ focused }) => (
                         <AntDesign name="heart" size={25} color={focused ? THEME.PRIMARY : THEME.DEFAULT} />
                     ),
+                    tabBarButton: (props: any) => (
+                        <TabBarButton
+                            {...props}
+                        />
+                    )
                 }}
             />
             <Tab.Screen
@@ -46,6 +59,11 @@ const HomeNavigation: React.FC = () => {
                     tabBarIcon: ({ focused }) => (
                         <FontAwesome name="user" size={28} color={focused ? THEME.PRIMARY : THEME.DEFAULT} />
                     ),
+                    tabBarButton: (props: any) => (
+                        <TabBarButton
+                            {...props}
+                        />
+                    )
                 }}
             />
             <Tab.Screen
@@ -56,6 +74,11 @@ const HomeNavigation: React.FC = () => {
                     tabBarIcon: ({ focused }) => (
                         <FontAwesome name="shopping-cart" size={28} color={focused ? THEME.PRIMARY : THEME.DEFAULT} />
                     ),
+                    tabBarButton: (props: any) => (
+                        <TabBarButton
+                            {...props}
+                        />
+                    )
                 }}
             />
         </Tab.Navigator>
@@ -63,3 +86,11 @@ const HomeNavigation: React.FC = () => {
 }
 
 export default HomeNavigation
+
+const styles = StyleSheet.create({
+    tabBarOptions: {
+        borderTopWidth: 0,
+        backgroundColor: "transparent",
+        elevation: 0,
+    },
+});
