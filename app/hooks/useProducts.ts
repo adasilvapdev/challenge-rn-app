@@ -20,7 +20,7 @@ export const useProducts = () => {
             setAllProducts(products)
             setIsLoading(false)
         } catch (error) {
-            console.log('[ERROR]: FeedScreen > getAllProducts: ', error)
+            console.log('[ERROR]: useProducts > getAllProducts: ', error)
         }
     }
 
