@@ -1,9 +1,12 @@
 import React from 'react';
 import RootNavigation from './app/navigations/RootNavigation';
+import { ThemeProvider } from './app/styles/themes/default/ThemeProvider'
 
 const App = () => {
   return (
-    <RootNavigation />
+    <ThemeProvider>
+      <RootNavigation />
+    </ThemeProvider>
   );
 };
 
