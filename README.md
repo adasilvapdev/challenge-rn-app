@@ -27,3 +27,6 @@ El reto consiste en desarrollar una app móvil con React Native o Ionic (Angular
 
 
 Recomiendo hacer uso de la siguiente API:  https://fakestoreapi.com
+
+
+Updated and maintained with ❤️ by [@andreaintech](https://andreaintech.github.io/web/)
